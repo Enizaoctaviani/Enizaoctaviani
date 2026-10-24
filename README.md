@@ -1,17 +1,14 @@
 <div align="center">
-  <!-- 🌸 Hero Cinematic Banner: Developer Coding Aesthetic in #e942f5 -->
+  <!-- 🌸 Hero Coding Banner in #e942f5 (Ukuran sedang / standar) -->
   <a href="https://github.com/enizaoctaviani">
-    <img src="./assets/banner.jpg" width="100%" alt="Eniza Octaviani - IT Programmer &amp; Coding Enthusiast" style="border-radius: 12px; box-shadow: 0 4px 30px rgba(233, 66, 245, 0.35);" />
+    <img src="./assets/banner.jpg" width="480" alt="Eniza Octaviani - IT Programmer &amp; Coding Enthusiast" style="border-radius: 10px;" />
   </a>
 
   <br/><br/>
 
-  <!-- IT Programmer & Coding Header Banner: Gradient #e942f5 -> #0d020d -> #e942f5 -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:e942f5,50:0d020d,100:e942f5&height=220&section=header&text=%3CEnizaOctaviani%20:%20IT%20Coding%20%2F%3E&fontSize=48&fontAlignY=40&fontColor=ffffff&desc=%F0%9F%92%BB%20Programmer%20IT%20%E2%80%A2%20Coding%20Enthusiast%20%E2%80%A2%20%22Pink%20Life%20pink%20person%22%20%E2%9A%A1&descAlignY=65&descAlign=50&descSize=18&descColor=e942f5" width="100%" alt="Header Banner" />
-
   <!-- Monospace IT Coding Typing SVG with #e942f5 Accent -->
   <a href="https://github.com/enizaoctaviani">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=e942f5&center=true&vCenter=true&width=680&lines=console.log(%22%F0%9F%91%8B%20Hello%2C%20World!%20Welcome%20to%20my%20IT%20Coding%20Space%22)%3B;const+role+%3D+%22Programmer+IT+%26+Coding+Enthusiast+%F0%9F%92%BB%E2%9A%A1%22%3B;const+palette+%3D+%22%23e942f5+Cyber+Neon+Vibe+%F0%9F%8C%B8%F0%9F%92%96%22%3B;while+(isCoding)+%7B+writeCleanCode()%3B+solveBugs()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Pink+Life+pink+person+%2F%2F+Love+Coding+%F0%9F%92%96%E2%9C%A8%22%3B" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=19&pause=1000&color=e942f5&center=true&vCenter=true&width=620&lines=console.log(%22%F0%9F%91%8B%20Hello%2C%20World!%20Welcome%20to%20my%20IT%20Coding%20Space%22)%3B;const+role+%3D+%22Programmer+IT+%26+Coding+Enthusiast+%F0%9F%92%BB%E2%9A%A1%22%3B;const+palette+%3D+%22%23e942f5+Cyber+Neon+Vibe+%F0%9F%8C%B8%F0%9F%92%96%22%3B;while+(isCoding)+%7B+writeCleanCode()%3B+solveBugs()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Pink+Life+pink+person+%2F%2F+Love+Coding+%F0%9F%92%96%E2%9C%A8%22%3B" alt="Typing SVG" />
   </a>
 
   <br/>
@@ -30,9 +27,6 @@
       <img src="https://img.shields.io/badge/ping-enizaoktaviani%40gmail.com-e942f5?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
     </a>
   </p>
-
-  <!-- Interactive / Vector Coding Window Art in #e942f5 -->
-  <img src="./assets/coding_window.svg" width="95%" alt="Eniza Octaviani Coding Window" />
 </div>
 
 ---
