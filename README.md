@@ -1,23 +1,24 @@
 <div align="center">
-  <!-- Code Editor Header Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:090d16,50:0f172a,100:1e1b4b&height=200&section=header&text=%3CEnizaOctaviani%20%2F%3E&fontSize=52&fontAlignY=42&fontColor=38bdf8&desc=%2F%2F%20Software%20Developer%20%7C%20const%20passion%20%3D%20%5B'Code'%2C%20'Coffee'%2C%20'Create'%5D%3B&descAlignY=68&descAlign=50&descSize=17&descColor=a5b4fc" width="100%" alt="Code Header" />
+  <!-- Code Editor Header Banner with #a8326b Palette -->
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:0e0511,40:220a22,100:a8326b&height=210&section=header&text=%3CEnizaOctaviani%20%2F%3E&fontSize=52&fontAlignY=42&fontColor=fdf2f8&desc=%2F%2F%20Software%20Developer%20%7C%20const%20theme%20%3D%20%22%23a8326b%22%3B&descAlignY=68&descAlign=50&descSize=17&descColor=f472b6" width="100%" alt="Code Header" />
 
-  <!-- Monospace / Coding Typing SVG -->
+  <!-- Monospace / Coding Typing SVG with #a8326b / Rose Accent -->
   <a href="https://github.com/Enizaoctaviani">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=22D3EE&center=true&vCenter=true&width=620&lines=console.log(%22Hello%2C%20World!%20%F0%9F%91%8B%22)%3B;const+developer+%3D+new+SoftwareEngineer()%3B;while+(alive)+%7B+writeCode()%3B+learn()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Crafting+elegant+solutions+daily+%F0%9F%9A%80%22%3B" alt="Typing SVG Code" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=f472b6&center=true&vCenter=true&width=620&lines=console.log(%22Hello%2C%20World!%20%F0%9F%91%8B%22)%3B;const+developer+%3D+new+SoftwareEngineer()%3B;while+(alive)+%7B+writeCode()%3B+learn()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Crafting+elegant+solutions+daily+%F0%9F%9A%80%22%3B" alt="Typing SVG Code" />
   </a>
 
   <br/>
 
-  <!-- Terminal Style Status Badges -->
+  <!-- Terminal Style Status Badges (#a8326b Theme) -->
   <p align="center">
     <code>$ systemctl status developer.service --active</code>
     <br/><br/>
-    <img src="https://img.shields.io/badge/status-RUNNING-38bdf8?style=flat-square&logo=gnubash&logoColor=white" alt="Status" />
-    <img src="https://img.shields.io/badge/uptime-99.99%25-10b981?style=flat-square&logo=uptime&logoColor=white" alt="Uptime" />
-    <img src="https://komarev.com/ghpvc/?username=Enizaoctaviani&style=flat-square&color=818cf8&label=visitors%20count" alt="Visitor Count" />
+    <img src="https://img.shields.io/badge/status-RUNNING-a8326b?style=flat-square&logo=gnubash&logoColor=white" alt="Status" />
+    <img src="https://img.shields.io/badge/theme-%23a8326b-a8326b?style=flat-square&logo=color&logoColor=white" alt="Theme" />
+    <img src="https://img.shields.io/badge/uptime-99.99%25-a8326b?style=flat-square&logo=uptime&logoColor=white" alt="Uptime" />
+    <img src="https://komarev.com/ghpvc/?username=Enizaoctaviani&style=flat-square&color=a8326b&label=visitors%20count" alt="Visitor Count" />
     <a href="mailto:enizaoktaviani@gmail.com">
-      <img src="https://img.shields.io/badge/ping-enizaoktaviani%40gmail.com-ea4335?style=flat-square&logo=gmail&logoColor=white" alt="Ping" />
+      <img src="https://img.shields.io/badge/ping-enizaoktaviani%40gmail.com-a8326b?style=flat-square&logo=gmail&logoColor=white" alt="Ping" />
     </a>
   </p>
 </div>
@@ -30,6 +31,7 @@
 /**
  * @file eniza.config.ts
  * @author Eniza Octaviani <enizaoktaviani@gmail.com>
+ * @palette #a8326b (Cyber Berry / Rose Dark)
  * @license MIT
  */
 
@@ -42,6 +44,7 @@ interface IDeveloper {
     editor: string;
     terminal: string;
     theme: string;
+    accentColor: string;
   };
   stack: Record<string, string[]>;
   currentTask: string;
@@ -56,7 +59,8 @@ export const developer: IDeveloper = {
     os: "Windows / Linux",
     editor: "Visual Studio Code",
     terminal: "Bash / PowerShell / Zsh",
-    theme: "Tokyo Night / Cyber Dark"
+    theme: "Cyber Berry Dark (#a8326b)",
+    accentColor: "#a8326b"
   },
   stack: {
     frontend: ["TypeScript", "JavaScript", "React.js", "Next.js", "Tailwind CSS"],
@@ -81,13 +85,14 @@ export const developer: IDeveloper = {
    /   ,,   \     Kernel: 6.8.0-zen-custom
   /   |  |  -\    Uptime: Always Coding 🚀
  /_-''    ''-_\   Shell: zsh 5.9
-                  Theme: Tokyo-Night-Dark
-                  Editor: VS Code (Vim Mode & Prettier)
+                  Theme: Cyber-Berry-Dark (#a8326b)
+                  Editor: VS Code (Tokyo Night & Prettier)
                   Languages: TS, JS, Python, PHP, SQL
                   Coffee Consumed: Infinity ☕
 
 [eniza@workstation ~]$ cat status.log
 ✓ [STATUS]   : Actively building & shipping web products
+✓ [THEME]    : Modern Coding Aesthetics with #a8326b Accent
 ✓ [LEARNING] : Advanced Full-Stack Architecture, Distributed Systems, CI/CD
 ✓ [OPEN_FOR] : Collaborative Open Source Projects & Tech Opportunities
 ✓ [CONTACT]  : curl -X POST https://github.com/Enizaoctaviani/reach-me
@@ -101,6 +106,7 @@ export const developer: IDeveloper = {
 {
   "name": "@eniza/tech-arsenal",
   "version": "2.0.26",
+  "theme": "#a8326b",
   "description": "Production-ready tools & frameworks in my developer toolkit",
   "dependencies": {
     "languages": ["TypeScript", "JavaScript", "Python", "PHP", "HTML5", "CSS3", "SQL"],
@@ -138,32 +144,32 @@ export const developer: IDeveloper = {
 ### 📊 `// 04. GITHUB_TELEMETRY_STATS.log`
 
 <div align="center">
-  <code>/* Querying telemetry from GitHub GraphQL API with theme=tokyonight */</code>
+  <code>/* Querying telemetry from GitHub GraphQL API styled in #a8326b Cyber Berry */</code>
   <br/><br/>
 
-  <!-- Stats & Top Languages -->
+  <!-- Stats & Top Languages styled with #a8326b borders & accents -->
   <a href="https://github.com/Enizaoctaviani">
-    <img src="https://github-readme-stats.vercel.app/api?username=Enizaoctaviani&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&icon_color=bb9af7&text_color=c0caf5" alt="Eniza's GitHub Stats" height="175" />
+    <img src="https://github-readme-stats.vercel.app/api?username=Enizaoctaviani&show_icons=true&hide_border=false&border_color=a8326b&bg_color=0e0511&title_color=f472b6&icon_color=a8326b&text_color=f3e8f8" alt="Eniza's GitHub Stats" height="175" />
   </a>
   <a href="https://github.com/Enizaoctaviani">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Enizaoctaviani&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=70a5fd&text_color=c0caf5" alt="Top Languages" height="175" />
-  </a>
-</div>
-
-<br/>
-
-<div align="center">
-  <!-- Streak Stats -->
-  <a href="https://github.com/Enizaoctaviani">
-    <img src="https://streak-stats.demolab.com/?user=Enizaoctaviani&theme=tokyonight&hide_border=true&background=0d1117&stroke=70a5fd&ring=bb9af7&fire=ff9e64&currStreakNum=70a5fd" alt="GitHub Streak" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Enizaoctaviani&layout=compact&hide_border=false&border_color=a8326b&bg_color=0e0511&title_color=f472b6&text_color=f3e8f8" alt="Top Languages" height="175" />
   </a>
 </div>
 
 <br/>
 
 <div align="center">
-  <!-- Contribution Activity Graph -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Enizaoctaviani&theme=tokyo-night&hide_border=true&bg_color=0d1117&color=70a5fd&line=bb9af7&point=ff9e64&area=true&hide_title=true" alt="Activity Graph" width="95%" />
+  <!-- Streak Stats styled with #a8326b -->
+  <a href="https://github.com/Enizaoctaviani">
+    <img src="https://streak-stats.demolab.com/?user=Enizaoctaviani&hide_border=false&border=a8326b&background=0e0511&stroke=a8326b&ring=f472b6&fire=a8326b&currStreakNum=f472b6&sideNums=f3e8f8&sideLabels=f3e8f8&dates=c4b5fd" alt="GitHub Streak" />
+  </a>
+</div>
+
+<br/>
+
+<div align="center">
+  <!-- Contribution Activity Graph styled with #a8326b -->
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Enizaoctaviani&bg_color=0e0511&color=f472b6&line=a8326b&point=f472b6&area=true&hide_border=false&border=a8326b&hide_title=true" alt="Activity Graph" width="95%" />
 </div>
 
 ---
@@ -174,7 +180,7 @@ export const developer: IDeveloper = {
   <code>"trophies": ["Committed", "Active_Contributor", "Star_Seeker"]</code>
   <br/><br/>
   <a href="https://github.com/Enizaoctaviani">
-    <img src="https://github-profile-trophy.vercel.app/?username=Enizaoctaviani&theme=tokyonight&no-frame=true&no-bg=true&margin_w=4" alt="Eniza's Trophies" />
+    <img src="https://github-profile-trophy.vercel.app/?username=Enizaoctaviani&theme=radical&no-frame=true&no-bg=true&margin_w=4" alt="Eniza's Trophies" />
   </a>
 </div>
 
@@ -183,7 +189,7 @@ export const developer: IDeveloper = {
 ### 💬 `// 06. RUNTIME_DEV_QUOTE.sh`
 
 <div align="center">
-  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Developer Quote" />
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Developer Quote" />
 </div>
 
 ---
@@ -209,22 +215,22 @@ Content-Type: application/json
 ```
 
 <div align="center">
-  <p><code>// Quick Connect Buttons</code></p>
+  <p><code>// Quick Connect Buttons (#a8326b Edition)</code></p>
 
   <a href="mailto:enizaoktaviani@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/curl-Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+    <img src="https://img.shields.io/badge/curl-Gmail-a8326b?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
   &nbsp;
   <a href="https://github.com/Enizaoctaviani" target="_blank">
-    <img src="https://img.shields.io/badge/git_clone-GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+    <img src="https://img.shields.io/badge/git_clone-GitHub-a8326b?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/" target="_blank">
-    <img src="https://img.shields.io/badge/connect-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/connect-LinkedIn-a8326b?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://instagram.com/" target="_blank">
-    <img src="https://img.shields.io/badge/follow-Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+    <img src="https://img.shields.io/badge/follow-Instagram-a8326b?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
   </a>
 </div>
 
@@ -233,6 +239,6 @@ Content-Type: application/json
 <div align="center">
   <code>/* EOF: exit 0 -- Compiled successfully with 0 errors, 0 warnings */</code>
   <br/><br/>
-  <!-- Code Footer Banner -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:1e1b4b,50:0f172a,100:090d16&height=80&section=footer&text=console.log(%22Thanks%20for%20visiting!%20%F0%9F%9A%80%22)%3B&fontSize=22&fontAlignY=55&fontColor=38bdf8" width="100%" alt="Footer Banner" />
+  <!-- Code Footer Banner with #a8326b Gradient -->
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:a8326b,50:220a22,100:0e0511&height=80&section=footer&text=console.log(%22Thanks%20for%20visiting!%20%F0%9F%9A%80%22)%3B&fontSize=22&fontAlignY=55&fontColor=f472b6" width="100%" alt="Footer Banner" />
 </div>
