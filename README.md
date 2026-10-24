@@ -1,28 +1,38 @@
 <div align="center">
-  <!-- IT Programmer & Coding Header Banner: Gradient #eb34c3 -> #0d020d -> #eb34c3 -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:eb34c3,50:0d020d,100:eb34c3&height=220&section=header&text=%3CEnizaOctaviani%20:%20IT%20Coding%20%2F%3E&fontSize=48&fontAlignY=40&fontColor=ffffff&desc=%F0%9F%92%BB%20Programmer%20IT%20%E2%80%A2%20Coding%20Enthusiast%20%E2%80%A2%20%22Pink%20Life%20pink%20person%22%20%E2%9A%A1&descAlignY=65&descAlign=50&descSize=18&descColor=eb34c3" width="100%" alt="Header Banner" />
-
-  <!-- Monospace IT Coding Typing SVG with #eb34c3 Accent -->
+  <!-- 🌸 Hero Cinematic Banner: Developer Coding Aesthetic in #e942f5 -->
   <a href="https://github.com/enizaoctaviani">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=eb34c3&center=true&vCenter=true&width=660&lines=console.log(%22%F0%9F%91%8B%20Hello%2C%20World!%20Welcome%20to%20my%20IT%20Coding%20Space%22)%3B;const+role+%3D+%22Programmer+IT+%26+Coding+Enthusiast+%F0%9F%92%BB%E2%9A%A1%22%3B;while+(isCoding)+%7B+writeCode()%3B+solveBugs()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Pink+Life+pink+person+%2F%2F+Love+Coding+%F0%9F%92%96%E2%9C%A8%22%3B" alt="Typing SVG" />
+    <img src="./assets/banner.jpg" width="100%" alt="Eniza Octaviani - IT Programmer &amp; Coding Enthusiast" style="border-radius: 12px; box-shadow: 0 4px 30px rgba(233, 66, 245, 0.35);" />
+  </a>
+
+  <br/><br/>
+
+  <!-- IT Programmer & Coding Header Banner: Gradient #e942f5 -> #0d020d -> #e942f5 -->
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:e942f5,50:0d020d,100:e942f5&height=220&section=header&text=%3CEnizaOctaviani%20:%20IT%20Coding%20%2F%3E&fontSize=48&fontAlignY=40&fontColor=ffffff&desc=%F0%9F%92%BB%20Programmer%20IT%20%E2%80%A2%20Coding%20Enthusiast%20%E2%80%A2%20%22Pink%20Life%20pink%20person%22%20%E2%9A%A1&descAlignY=65&descAlign=50&descSize=18&descColor=e942f5" width="100%" alt="Header Banner" />
+
+  <!-- Monospace IT Coding Typing SVG with #e942f5 Accent -->
+  <a href="https://github.com/enizaoctaviani">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=e942f5&center=true&vCenter=true&width=680&lines=console.log(%22%F0%9F%91%8B%20Hello%2C%20World!%20Welcome%20to%20my%20IT%20Coding%20Space%22)%3B;const+role+%3D+%22Programmer+IT+%26+Coding+Enthusiast+%F0%9F%92%BB%E2%9A%A1%22%3B;const+palette+%3D+%22%23e942f5+Cyber+Neon+Vibe+%F0%9F%8C%B8%F0%9F%92%96%22%3B;while+(isCoding)+%7B+writeCleanCode()%3B+solveBugs()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Pink+Life+pink+person+%2F%2F+Love+Coding+%F0%9F%92%96%E2%9C%A8%22%3B" alt="Typing SVG" />
   </a>
 
   <br/>
 
-  <!-- IT & Coding Telemetry Badges in #eb34c3 -->
+  <!-- IT & Coding Telemetry Badges in #e942f5 -->
   <p align="center">
     <code>$ systemctl status programmer-it-coding.service --active</code>
     <br/><br/>
-    <img src="https://img.shields.io/badge/role-Programmer%20IT-eb34c3?style=flat-square&logo=visual-studio-code&logoColor=white" alt="Role" />
-    <img src="https://img.shields.io/badge/focus-IT%20Coding%20%26%20Software-eb34c3?style=flat-square&logo=codeforces&logoColor=white" alt="Focus" />
-    <img src="https://img.shields.io/badge/status-Mahasiswa%20IT-eb34c3?style=flat-square&logo=graduation-cap&logoColor=white" alt="Status" />
-    <img src="https://img.shields.io/badge/motto-Pink%20Life%20pink%20person-eb34c3?style=flat-square" alt="Motto" />
-    <img src="https://img.shields.io/badge/palette-%23eb34c3-0d020d?style=flat-square&logo=color&logoColor=eb34c3" alt="Theme Accent" />
-    <img src="https://komarev.com/ghpvc/?username=enizaoctaviani&style=flat-square&color=eb34c3&label=coding%20views" alt="Profile Views" />
+    <img src="https://img.shields.io/badge/role-Programmer%20IT-e942f5?style=flat-square&logo=visual-studio-code&logoColor=white" alt="Role" />
+    <img src="https://img.shields.io/badge/focus-IT%20Coding%20%26%20Software-e942f5?style=flat-square&logo=codeforces&logoColor=white" alt="Focus" />
+    <img src="https://img.shields.io/badge/status-Mahasiswa%20IT-e942f5?style=flat-square&logo=graduation-cap&logoColor=white" alt="Status" />
+    <img src="https://img.shields.io/badge/motto-Pink%20Life%20pink%20person-e942f5?style=flat-square" alt="Motto" />
+    <img src="https://img.shields.io/badge/palette-%23e942f5-0d020d?style=flat-square&logo=color&logoColor=e942f5" alt="Theme Accent" />
+    <img src="https://komarev.com/ghpvc/?username=enizaoctaviani&style=flat-square&color=e942f5&label=coding%20views" alt="Profile Views" />
     <a href="mailto:enizaoktaviani@gmail.com">
-      <img src="https://img.shields.io/badge/ping-enizaoktaviani%40gmail.com-eb34c3?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
+      <img src="https://img.shields.io/badge/ping-enizaoktaviani%40gmail.com-e942f5?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
     </a>
   </p>
+
+  <!-- Interactive / Vector Coding Window Art in #e942f5 -->
+  <img src="./assets/coding_window.svg" width="95%" alt="Eniza Octaviani Coding Window" />
 </div>
 
 ---
@@ -35,7 +45,7 @@
  * @role Programmer IT & Coding Specialist
  * @author Eniza Octaviani (@enizaoctaviani)
  * @tagline "Pink Life pink person"
- * @themeAccent #eb34c3
+ * @themeAccent #e942f5
  */
 
 interface IITCodingProfile {
@@ -74,7 +84,7 @@ export const enizaIT: IITCodingProfile = {
     "Clean, Structured, & Maintainable Code",
     "Creative & Aesthetic UI/UX Development"
   ],
-  themeColor: "#eb34c3",
+  themeColor: "#e942f5",
   codingStack: {
     languages: ["TypeScript", "JavaScript", "Python", "PHP", "HTML5", "CSS3", "SQL"],
     frontend: ["React.js", "Next.js", "Tailwind CSS", "Bootstrap"],
@@ -82,7 +92,7 @@ export const enizaIT: IITCodingProfile = {
     databases: ["MySQL", "PostgreSQL", "MongoDB"],
     tools: ["Git", "GitHub", "VS Code", "Postman", "Linux", "Figma", "Vite"]
   },
-  codingPhilosophy: "Code is like humor. When you have to explain it, it’s bad. Keep it clean & aesthetic!"
+  codingPhilosophy: "Code is like humor. When you have to explain it, it’s bad. Keep it clean, scalable & aesthetic!"
 };
 ```
 
@@ -99,12 +109,12 @@ export const enizaIT: IITCodingProfile = {
                        Host: High-End Developer Rig
                        OS: Linux / Windows 11 Pro
                        Shell: zsh 5.9 (Coding Environment)
-                       Theme: Programmer IT (#eb34c3 Cyber Neon)
+                       Theme: Programmer IT (#e942f5 Cyber Neon)
                        Primary Activity: Coding, Debugging & Building Systems ⚡
                        Motto: "Pink Life pink person" 🌸💖
 
 [eniza@it-coding-station ~]$ cat daily_coding_status.log
-✓ [ENGINE]   : Active Coding Engine loaded with #eb34c3 neon vibe
+✓ [ENGINE]   : Active Coding Engine loaded with #e942f5 neon vibe
 ✓ [PROJECTS] : Building modern interactive web applications
 ✓ [GOAL]     : Mengasah keahlian sebagai Programmer IT profesional & inovatif
 ✓ [MOTTO]    : "Pink Life pink person" // Passionate in Coding 🚀
@@ -118,7 +128,7 @@ export const enizaIT: IITCodingProfile = {
 {
   "system": "IT Coding Environment",
   "developer": "Eniza Octaviani",
-  "themeAccent": "#eb34c3",
+  "themeAccent": "#e942f5",
   "codingDependencies": {
     "programmingLanguages": ["TypeScript", "JavaScript", "Python", "PHP", "HTML5", "CSS3", "SQL"],
     "frontendFrameworks": ["React.js", "Next.js", "TailwindCSS", "Bootstrap"],
@@ -153,32 +163,32 @@ export const enizaIT: IITCodingProfile = {
 ### 📊 `// 04. GITHUB_CODING_STATS_&_METRICS.log`
 
 <div align="center">
-  <code>/* Querying Coding Telemetry for @enizaoctaviani with #eb34c3 Neon Glow */</code>
+  <code>/* Querying Coding Telemetry for @enizaoctaviani with #e942f5 Neon Glow */</code>
   <br/><br/>
 
-  <!-- Stats & Top Languages Cards with #eb34c3 Border & Theme -->
+  <!-- Stats & Top Languages Cards with #e942f5 Border & Theme -->
   <a href="https://github.com/enizaoctaviani">
-    <img src="https://github-readme-stats.vercel.app/api?username=enizaoctaviani&show_icons=true&hide_border=false&border_color=eb34c3&bg_color=0d020d&title_color=eb34c3&icon_color=eb34c3&text_color=fce7f3" alt="Eniza's GitHub Stats" height="175" />
+    <img src="https://github-readme-stats.vercel.app/api?username=enizaoctaviani&show_icons=true&hide_border=false&border_color=e942f5&bg_color=0d020d&title_color=e942f5&icon_color=e942f5&text_color=fce7f3" alt="Eniza's GitHub Stats" height="175" />
   </a>
   <a href="https://github.com/enizaoctaviani">
-    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=enizaoctaviani&layout=compact&hide_border=false&border_color=eb34c3&bg_color=0d020d&title_color=eb34c3&text_color=fce7f3" alt="Top Languages" height="175" />
-  </a>
-</div>
-
-<br/>
-
-<div align="center">
-  <!-- GitHub Streak Stats with #eb34c3 -->
-  <a href="https://github.com/enizaoctaviani">
-    <img src="https://streak-stats.demolab.com/?user=enizaoctaviani&hide_border=false&border=eb34c3&background=0d020d&stroke=eb34c3&ring=eb34c3&fire=eb34c3&currStreakNum=eb34c3&sideNums=fce7f3&sideLabels=fce7f3&dates=eb34c3" alt="GitHub Streak" />
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=enizaoctaviani&layout=compact&hide_border=false&border_color=e942f5&bg_color=0d020d&title_color=e942f5&text_color=fce7f3" alt="Top Languages" height="175" />
   </a>
 </div>
 
 <br/>
 
 <div align="center">
-  <!-- Contribution Activity Graph with #eb34c3 -->
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=enizaoctaviani&bg_color=0d020d&color=eb34c3&line=eb34c3&point=eb34c3&area=true&hide_border=false&border=eb34c3&hide_title=true" alt="Activity Graph" width="95%" />
+  <!-- GitHub Streak Stats with #e942f5 -->
+  <a href="https://github.com/enizaoctaviani">
+    <img src="https://streak-stats.demolab.com/?user=enizaoctaviani&hide_border=false&border=e942f5&background=0d020d&stroke=e942f5&ring=e942f5&fire=e942f5&currStreakNum=e942f5&sideNums=fce7f3&sideLabels=fce7f3&dates=e942f5" alt="GitHub Streak" />
+  </a>
+</div>
+
+<br/>
+
+<div align="center">
+  <!-- Contribution Activity Graph with #e942f5 -->
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=enizaoctaviani&bg_color=0d020d&color=e942f5&line=e942f5&point=e942f5&area=true&hide_border=false&border=e942f5&hide_title=true" alt="Activity Graph" width="95%" />
 </div>
 
 ---
@@ -212,6 +222,7 @@ Content-Type: application/json
 {
   "target": "Eniza Octaviani",
   "role": "Programmer IT & Coding Enthusiast",
+  "themeColor": "#e942f5",
   "motto": "Pink Life pink person 🌸⚡",
   "email": "enizaoktaviani@gmail.com",
   "message": "Let's collaborate on code, technology projects, or open-source!"
@@ -219,22 +230,22 @@ Content-Type: application/json
 ```
 
 <div align="center">
-  <p><code>// Protocol Endpoints & Quick Connect</code></p>
+  <p><code>// Protocol Endpoints &amp; Quick Connect</code></p>
 
   <a href="mailto:enizaoktaviani@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/curl-Gmail-eb34c3?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+    <img src="https://img.shields.io/badge/curl-Gmail-e942f5?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
   </a>
   &nbsp;
   <a href="https://github.com/enizaoctaviani" target="_blank">
-    <img src="https://img.shields.io/badge/git_clone-GitHub-0d020d?style=for-the-badge&logo=github&logoColor=eb34c3" alt="GitHub" />
+    <img src="https://img.shields.io/badge/git_clone-GitHub-0d020d?style=for-the-badge&logo=github&logoColor=e942f5" alt="GitHub" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/" target="_blank">
-    <img src="https://img.shields.io/badge/connect-LinkedIn-eb34c3?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+    <img src="https://img.shields.io/badge/connect-LinkedIn-e942f5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
   <a href="https://instagram.com/" target="_blank">
-    <img src="https://img.shields.io/badge/follow-Instagram-0d020d?style=for-the-badge&logo=instagram&logoColor=eb34c3" alt="Instagram" />
+    <img src="https://img.shields.io/badge/follow-Instagram-0d020d?style=for-the-badge&logo=instagram&logoColor=e942f5" alt="Instagram" />
   </a>
 </div>
 
@@ -243,6 +254,6 @@ Content-Type: application/json
 <div align="center">
   <code>/* return process.exit(0); -- Programmer IT // IT Coding // Pink Life pink person 🌸⚡ */</code>
   <br/><br/>
-  <!-- IT Programmer & Coding Footer Banner: Gradient #eb34c3 -> #0d020d -> #eb34c3 -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:eb34c3,50:0d020d,100:eb34c3&height=80&section=footer&text=console.log(%22Programmer%20IT%20%7C%20Coding%20%7C%20Pink%20Life%20pink%20person%20%F0%9F%8C%B8%E2%9A%A1%22)%3B&fontSize=20&fontAlignY=55&fontColor=ffffff" width="100%" alt="Footer Banner" />
+  <!-- IT Programmer & Coding Footer Banner: Gradient #e942f5 -> #0d020d -> #e942f5 -->
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:e942f5,50:0d020d,100:e942f5&height=80&section=footer&text=console.log(%22Programmer%20IT%20%7C%20Coding%20%7C%20Pink%20Life%20pink%20person%20%F0%9F%8C%B8%E2%9A%A1%22)%3B&fontSize=20&fontAlignY=55&fontColor=ffffff" width="100%" alt="Footer Banner" />
 </div>

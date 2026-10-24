@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 440" width="100%" height="auto">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#120313"/>
+      <stop offset="50%" stop-color="#0a010c"/>
+      <stop offset="100%" stop-color="#150317"/>
+    </linearGradient>
+
+    <!-- Neon #e942f5 Gradient -->
+    <linearGradient id="pinkNeon" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e942f5"/>
+      <stop offset="50%" stop-color="#ff7cf7"/>
+      <stop offset="100%" stop-color="#e942f5"/>
+    </linearGradient>
+
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e942f5" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#791c85" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#e942f5" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <style>
+    .font-code { font-family: 'Fira Code', 'Courier New', Consolas, monospace; }
+    .keyword { fill: #e942f5; font-weight: 600; }
+    .type { fill: #67e8f9; }
+    .string { fill: #a5f3fc; }
+    .property { fill: #f472b6; }
+    .comment { fill: #86558a; font-style: italic; }
+    .number { fill: #facc15; }
+    .punctuation { fill: #cbd5e1; }
+    .linenumber { fill: #5c285e; text-anchor: end; user-select: none; }
+    .highlight { fill: #ffffff; font-weight: 600; }
+  </style>
+
+  <!-- Window Container -->
+  <rect x="5" y="5" width="840" height="430" rx="14" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.8" />
+
+  <!-- Outer Glow Accent Top -->
+  <line x1="40" y1="5" x2="810" y2="5" stroke="#e942f5" stroke-width="2" filter="url(#neonGlow)" stroke-opacity="0.8" />
+
+  <!-- Window Titlebar -->
+  <path d="M 5 19 C 5 11 11 5 19 5 L 831 5 C 839 5 845 11 845 19 L 845 42 L 5 42 Z" fill="#1b051f" />
+  <line x1="5" y1="42" x2="845" y2="42" stroke="#2d0b33" stroke-width="1" />
+
+  <!-- Window Control Buttons (MacOS style with pink glow) -->
+  <circle cx="28" cy="24" r="6.5" fill="#e942f5" />
+  <circle cx="48" cy="24" r="6.5" fill="#ff7cf7" fill-opacity="0.7" />
+  <circle cx="68" cy="24" r="6.5" fill="#a855f7" fill-opacity="0.7" />
+
+  <!-- Window Title -->
+  <g class="font-code" font-size="12">
+    <text x="425" y="27" fill="#f5d0fe" text-anchor="middle" letter-spacing="0.5">
+      💻 eniza_octaviani_workspace.ts — Visual Studio Code
+    </text>
+  </g>
+
+  <!-- Editor Tab -->
+  <rect x="85" y="14" width="210" height="28" rx="5" fill="#2d0b33" stroke="#e942f5" stroke-width="0.8" stroke-opacity="0.6"/>
+  <circle cx="98" cy="28" r="3" fill="#e942f5" />
+  <text x="110" y="32" fill="#ffffff" class="font-code" font-size="12" font-weight="bold">eniza_coding.ts</text>
+  <text x="278" y="32" fill="#e942f5" class="font-code" font-size="12">×</text>
+
+  <!-- Sidebar Hint Strip -->
+  <rect x="5" y="43" width="48" height="392" rx="0" fill="#130217" />
+  <g fill="#86558a" font-size="16" text-anchor="middle">
+    <text x="29" y="80">📁</text>
+    <text x="29" y="125">🔍</text>
+    <text x="29" y="170">🌿</text>
+    <text x="29" y="215">⚡</text>
+    <text x="29" y="405">⚙️</text>
+  </g>
+  <line x1="53" y1="43" x2="53" y2="435" stroke="#2d0b33" stroke-width="1" />
+
+  <!-- Code Area Content -->
+  <g class="font-code" font-size="13.5" xml:space="preserve">
+    <!-- Line Numbers -->
+    <g class="linenumber" font-size="12">
+      <text x="82" y="78">01</text>
+      <text x="82" y="104">02</text>
+      <text x="82" y="130">03</text>
+      <text x="82" y="156">04</text>
+      <text x="82" y="182">05</text>
+      <text x="82" y="208">06</text>
+      <text x="82" y="234">07</text>
+      <text x="82" y="260">08</text>
+      <text x="82" y="286">09</text>
+      <text x="82" y="312">10</text>
+      <text x="82" y="338">11</text>
+      <text x="82" y="364">12</text>
+      <text x="82" y="390">13</text>
+      <text x="82" y="416">14</text>
+    </g>
+
+    <!-- Code Line 01 -->
+    <text x="100" y="78">
+      <tspan class="keyword">import</tspan> <tspan class="punctuation">{</tspan> <tspan class="property">Programmer</tspan><tspan class="punctuation">, </tspan><tspan class="property">CodingPassion</tspan> <tspan class="punctuation">}</tspan> <tspan class="keyword">from</tspan> <tspan class="string">'@future/innovator'</tspan><tspan class="punctuation">;</tspan>
+    </text>
+
+    <!-- Line 02 -->
+    <text x="100" y="104">
+      <tspan class="comment">/** @theme #e942f5 | IT Programmer Profile &amp; Coding Universe */</tspan>
+    </text>
+
+    <!-- Line 03 -->
+    <text x="100" y="130">
+      <tspan class="keyword">const</tspan> <tspan class="highlight">developer</tspan><tspan class="punctuation">: </tspan><tspan class="type">Programmer</tspan> <tspan class="punctuation">= {</tspan>
+    </text>
+
+    <!-- Line 04 -->
+    <text x="120" y="156">
+      <tspan class="property">name</tspan><tspan class="punctuation">: </tspan><tspan class="string">"Eniza Octaviani"</tspan><tspan class="punctuation">,</tspan>
+    </text>
+
+    <!-- Line 05 -->
+    <text x="120" y="182">
+      <tspan class="property">role</tspan><tspan class="punctuation">: </tspan><tspan class="string">"Programmer IT &amp; Coding Enthusiast 💻⚡"</tspan><tspan class="punctuation">,</tspan>
+    </text>
+
+    <!-- Line 06 -->
+    <text x="120" y="208">
+      <tspan class="property">status</tspan><tspan class="punctuation">: </tspan><tspan class="string">"Mahasiswa IT 🎓"</tspan><tspan class="punctuation">,</tspan>
+    </text>
+
+    <!-- Line 07 -->
+    <text x="120" y="234">
+      <tspan class="property">colorAccent</tspan><tspan class="punctuation">: </tspan><tspan class="string">"#e942f5"</tspan><tspan class="punctuation">, </tspan><tspan class="comment">// Neon Pink IT Aesthetic</tspan>
+    </text>
+
+    <!-- Line 08 -->
+    <text x="120" y="260">
+      <tspan class="property">motto</tspan><tspan class="punctuation">: </tspan><tspan class="string">"Pink Life pink person 🌸💖"</tspan><tspan class="punctuation">,</tspan>
+    </text>
+
+    <!-- Line 09 -->
+    <text x="120" y="286">
+      <tspan class="property">techStack</tspan><tspan class="punctuation">: [</tspan><tspan class="string">"TypeScript"</tspan><tspan class="punctuation">, </tspan><tspan class="string">"JavaScript"</tspan><tspan class="punctuation">, </tspan><tspan class="string">"React"</tspan><tspan class="punctuation">, </tspan><tspan class="string">"Node.js"</tspan><tspan class="punctuation">, </tspan><tspan class="string">"Python"</tspan><tspan class="punctuation">],</tspan>
+    </text>
+
+    <!-- Line 10 -->
+    <text x="120" y="312">
+      <tspan class="property">hardWork</tspan><tspan class="punctuation">: </tspan><tspan class="number">true</tspan><tspan class="punctuation">, </tspan><tspan class="property">passion</tspan><tspan class="punctuation">: </tspan><tspan class="number">Infinity</tspan>
+    </text>
+
+    <!-- Line 11 -->
+    <text x="100" y="338">
+      <tspan class="punctuation">};</tspan>
+    </text>
+
+    <!-- Line 12 -->
+    <text x="100" y="364">
+      <tspan class="keyword">while</tspan> <tspan class="punctuation">(developer.hardWork) {</tspan>
+    </text>
+
+    <!-- Line 13 -->
+    <text x="120" y="390">
+      <tspan class="highlight">developer</tspan><tspan class="punctuation">.</tspan><tspan class="property">buildFuture</tspan><tspan class="punctuation">({ </tspan><tspan class="property">aesthetic</tspan><tspan class="punctuation">: </tspan><tspan class="string">"#e942f5"</tspan><tspan class="punctuation">, </tspan><tspan class="property">code</tspan><tspan class="punctuation">: </tspan><tspan class="string">"Clean &amp; Scalable" </tspan><tspan class="punctuation">});</tspan>
+    </text>
+
+    <!-- Line 14 -->
+    <text x="100" y="416">
+      <tspan class="punctuation">}</tspan> <tspan class="comment">// 🚀 Powered by Eniza Octaviani</tspan>
+    </text>
+  </g>
+
+  <!-- Neon Badge Bottom-Right -->
+  <g transform="translate(620, 370)">
+    <rect x="0" y="0" width="200" height="42" rx="8" fill="#240529" stroke="#e942f5" stroke-width="1.5" filter="url(#neonGlow)"/>
+    <text x="100" y="26" text-anchor="middle" fill="#ffffff" class="font-code" font-size="12" font-weight="bold" letter-spacing="1">
+      ⚡ IT CODING #E942F5
+    </text>
+  </g>
+</svg>
