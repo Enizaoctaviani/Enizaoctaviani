@@ -1,23 +1,24 @@
 <div align="center">
-  <!-- IT Programmer Header Banner: Gradient #eb34c3 -> #0d020d -> #eb34c3 -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:eb34c3,50:0d020d,100:eb34c3&height=220&section=header&text=%3CEnizaOctaviani.IT%20%2F%3E&fontSize=50&fontAlignY=40&fontColor=ffffff&desc=Programmer%20IT%20%7C%20Mahasiswa%20%E2%80%A2%20%22Pink%20Life%20pink%20person%22%20%E2%9A%A1&descAlignY=65&descAlign=50&descSize=18&descColor=eb34c3" width="100%" alt="Header Banner" />
+  <!-- IT Programmer & Coding Header Banner: Gradient #eb34c3 -> #0d020d -> #eb34c3 -->
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:eb34c3,50:0d020d,100:eb34c3&height=220&section=header&text=%3CEnizaOctaviani%20:%20IT%20Coding%20%2F%3E&fontSize=48&fontAlignY=40&fontColor=ffffff&desc=%F0%9F%92%BB%20Programmer%20IT%20%E2%80%A2%20Coding%20Enthusiast%20%E2%80%A2%20%22Pink%20Life%20pink%20person%22%20%E2%9A%A1&descAlignY=65&descAlign=50&descSize=18&descColor=eb34c3" width="100%" alt="Header Banner" />
 
   <!-- Monospace IT Coding Typing SVG with #eb34c3 Accent -->
   <a href="https://github.com/enizaoctaviani">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=eb34c3&center=true&vCenter=true&width=640&lines=const+programmer+%3D+new+ITDeveloper(%22Eniza+Octaviani%22)%3B;console.log(%22Role%3A+Programmer+IT+%26+Mahasiswa+%F0%9F%92%BB%E2%9A%A1%22)%3B;while+(system.isRunning())+status.code()%3B;git+commit+-m+%22Pink+Life+pink+person+%2F%2F+Tech+%26+Code+%F0%9F%92%96%22%3B" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=20&pause=1000&color=eb34c3&center=true&vCenter=true&width=660&lines=console.log(%22%F0%9F%91%8B%20Hello%2C%20World!%20Welcome%20to%20my%20IT%20Coding%20Space%22)%3B;const+role+%3D+%22Programmer+IT+%26+Coding+Enthusiast+%F0%9F%92%BB%E2%9A%A1%22%3B;while+(isCoding)+%7B+writeCode()%3B+solveBugs()%3B+sipCoffee()%3B+%7D;git+commit+-m+%22Pink+Life+pink+person+%2F%2F+Love+Coding+%F0%9F%92%96%E2%9C%A8%22%3B" alt="Typing SVG" />
   </a>
 
   <br/>
 
-  <!-- IT Telemetry Badges in #eb34c3 -->
+  <!-- IT & Coding Telemetry Badges in #eb34c3 -->
   <p align="center">
-    <code>$ systemctl status programmer-it.service --active</code>
+    <code>$ systemctl status programmer-it-coding.service --active</code>
     <br/><br/>
     <img src="https://img.shields.io/badge/role-Programmer%20IT-eb34c3?style=flat-square&logo=visual-studio-code&logoColor=white" alt="Role" />
+    <img src="https://img.shields.io/badge/focus-IT%20Coding%20%26%20Software-eb34c3?style=flat-square&logo=codeforces&logoColor=white" alt="Focus" />
     <img src="https://img.shields.io/badge/status-Mahasiswa%20IT-eb34c3?style=flat-square&logo=graduation-cap&logoColor=white" alt="Status" />
     <img src="https://img.shields.io/badge/motto-Pink%20Life%20pink%20person-eb34c3?style=flat-square" alt="Motto" />
-    <img src="https://img.shields.io/badge/accent-%23eb34c3-0d020d?style=flat-square&logo=color&logoColor=eb34c3" alt="Theme Accent" />
-    <img src="https://komarev.com/ghpvc/?username=enizaoctaviani&style=flat-square&color=eb34c3&label=profile%20views" alt="Profile Views" />
+    <img src="https://img.shields.io/badge/palette-%23eb34c3-0d020d?style=flat-square&logo=color&logoColor=eb34c3" alt="Theme Accent" />
+    <img src="https://komarev.com/ghpvc/?username=enizaoctaviani&style=flat-square&color=eb34c3&label=coding%20views" alt="Profile Views" />
     <a href="mailto:enizaoktaviani@gmail.com">
       <img src="https://img.shields.io/badge/ping-enizaoktaviani%40gmail.com-eb34c3?style=flat-square&logo=gmail&logoColor=white" alt="Email" />
     </a>
@@ -26,102 +27,103 @@
 
 ---
 
-### 💻 `// 01. IT_ENGINEER_PROFILE.ts`
+### 💻 `// 01. IT_CODING_PROFILE.ts`
 
 ```typescript
 /**
- * @file eniza_it_profile.ts
- * @role Programmer IT & Mahasiswa
+ * @file eniza_it_coding.ts
+ * @role Programmer IT & Coding Specialist
  * @author Eniza Octaviani (@enizaoctaviani)
  * @tagline "Pink Life pink person"
  * @themeAccent #eb34c3
  */
 
-interface IITProgrammer {
+interface IITCodingProfile {
   identity: {
     namaLengkap: string;
     namaPanggilan: string;
     username: string;
+    role: string;
     status: string;
     tagline: string;
   };
   specialization: string[];
   themeColor: string;
-  runtimeStack: {
+  codingStack: {
     languages: string[];
     frontend: string[];
     backend: string[];
     databases: string[];
     tools: string[];
   };
-  workPhilosophy: string;
+  codingPhilosophy: string;
 }
 
-export const enizaIT: IITProgrammer = {
+export const enizaIT: IITCodingProfile = {
   identity: {
     namaLengkap: "Eniza Octaviani",
     namaPanggilan: "Eniza",
     username: "enizaoctaviani",
-    status: "Mahasiswa IT & Programmer 🎓⚡",
+    role: "Programmer IT & Coding Enthusiast 💻⚡",
+    status: "Mahasiswa IT 🎓",
     tagline: "Pink Life pink person 🌸💖"
   },
   specialization: [
-    "Full-Stack Web Development",
-    "Database Systems & API Architecture",
-    "Clean Code & Efficient Algorithms",
-    "Aesthetic UI/UX Software Engineering"
+    "Full-Stack Web Coding & Engineering",
+    "Database Architecture & API Integration",
+    "Clean, Structured, & Maintainable Code",
+    "Creative & Aesthetic UI/UX Development"
   ],
   themeColor: "#eb34c3",
-  runtimeStack: {
+  codingStack: {
     languages: ["TypeScript", "JavaScript", "Python", "PHP", "HTML5", "CSS3", "SQL"],
     frontend: ["React.js", "Next.js", "Tailwind CSS", "Bootstrap"],
     backend: ["Node.js", "Express.js", "RESTful APIs"],
     databases: ["MySQL", "PostgreSQL", "MongoDB"],
     tools: ["Git", "GitHub", "VS Code", "Postman", "Linux", "Figma", "Vite"]
   },
-  workPhilosophy: "Building high-performance software with logical precision and aesthetic passion."
+  codingPhilosophy: "Code is like humor. When you have to explain it, it’s bad. Keep it clean & aesthetic!"
 };
 ```
 
 ---
 
-### 🖥️ `// 02. IT_SYSTEM_TERMINAL.sh`
+### 🖥️ `// 02. IT_CODING_TERMINAL.sh`
 
 ```bash
-[eniza@it-workstation ~]$ neofetch --it-profile
+[eniza@it-coding-station ~]$ neofetch --it-coding
          /\_/\         eniza@dev-universe
         ( o.o )        ------------------
-         > ^ <         Role: Programmer IT & Mahasiswa
+         > ^ <         Role: Programmer IT & Coding Enthusiast
+                       Focus: Full-Stack Web Development & Software Engineering
                        Host: High-End Developer Rig
                        OS: Linux / Windows 11 Pro
-                       Kernel: 6.9-zen-custom
-                       Shell: zsh 5.9 (Powerlevel10k)
+                       Shell: zsh 5.9 (Coding Environment)
                        Theme: Programmer IT (#eb34c3 Cyber Neon)
-                       IDE: VS Code (IT Toolchain & Extensions)
-                       Primary Stack: TS, JS, Python, React, SQL
-                       Status: Writing Code & Solving Real-World Problems ⚡
+                       Primary Activity: Coding, Debugging & Building Systems ⚡
+                       Motto: "Pink Life pink person" 🌸💖
 
-[eniza@it-workstation ~]$ cat telemetry_log.txt
-✓ [INIT]     : Systems operational with #eb34c3 neon vibe
-✓ [CURRENT]  : Mengembangkan project aplikasi web modern & arsitektur sistem
-✓ [MOTTO]    : "Pink Life pink person" 🌸
-✓ [TARGET]   : Menjadi Software Engineer / IT Professional yang handal & inovatif
+[eniza@it-coding-station ~]$ cat daily_coding_status.log
+✓ [ENGINE]   : Active Coding Engine loaded with #eb34c3 neon vibe
+✓ [PROJECTS] : Building modern interactive web applications
+✓ [GOAL]     : Mengasah keahlian sebagai Programmer IT profesional & inovatif
+✓ [MOTTO]    : "Pink Life pink person" // Passionate in Coding 🚀
 ```
 
 ---
 
-### 🛠️ `// 03. IT_STACK_&_FRAMEWORKS.json`
+### 🛠️ `// 03. CODING_TECH_STACK_&_FRAMEWORKS.json`
 
 ```json
 {
-  "system": "IT Developer Environment",
-  "engineer": "Eniza Octaviani",
-  "accentColor": "#eb34c3",
-  "dependencies": {
-    "coreLanguages": ["TypeScript", "JavaScript", "Python", "PHP", "HTML5", "CSS3", "SQL"],
+  "system": "IT Coding Environment",
+  "developer": "Eniza Octaviani",
+  "themeAccent": "#eb34c3",
+  "codingDependencies": {
+    "programmingLanguages": ["TypeScript", "JavaScript", "Python", "PHP", "HTML5", "CSS3", "SQL"],
     "frontendFrameworks": ["React.js", "Next.js", "TailwindCSS", "Bootstrap"],
     "backendAndDatabases": ["Node.js", "Express.js", "MySQL", "PostgreSQL", "MongoDB"],
-    "devOpsAndTools": ["Git", "GitHub", "VS Code", "Postman", "Linux", "Vite", "Figma"]
+    "devTools": ["Git", "GitHub", "VS Code", "Postman", "Linux", "Vite", "Figma"]
   }
 }
 ```
@@ -148,10 +150,10 @@ export const enizaIT: IITProgrammer = {
 
 ---
 
-### 📊 `// 04. GITHUB_STATS_&_METRICS.log`
+### 📊 `// 04. GITHUB_CODING_STATS_&_METRICS.log`
 
 <div align="center">
-  <code>/* IT Analytics & Metrics for @enizaoctaviani with #eb34c3 Neon Glow */</code>
+  <code>/* Querying Coding Telemetry for @enizaoctaviani with #eb34c3 Neon Glow */</code>
   <br/><br/>
 
   <!-- Stats & Top Languages Cards with #eb34c3 Border & Theme -->
@@ -181,7 +183,7 @@ export const enizaIT: IITProgrammer = {
 
 ---
 
-### 🏆 `// 05. IT_ACHIEVEMENTS.json`
+### 🏆 `// 05. CODING_ACHIEVEMENTS.json`
 
 <div align="center">
   <a href="https://github.com/enizaoctaviani">
@@ -199,20 +201,20 @@ export const enizaIT: IITProgrammer = {
 
 ---
 
-### 📡 `// 07. IT_COMMUNICATION_PROTOCOL.http`
+### 📡 `// 07. IT_CODING_PROTOCOL.http`
 
 ```http
-### Contact IT Programmer
+### Contact Programmer IT
 POST /api/v1/ping HTTP/1.1
 Host: api.eniza.dev
 Content-Type: application/json
 
 {
   "target": "Eniza Octaviani",
-  "role": "Programmer IT",
+  "role": "Programmer IT & Coding Enthusiast",
   "motto": "Pink Life pink person 🌸⚡",
   "email": "enizaoktaviani@gmail.com",
-  "message": "Ready to discuss technology, software projects, or collaboration!"
+  "message": "Let's collaborate on code, technology projects, or open-source!"
 }
 ```
 
@@ -239,8 +241,8 @@ Content-Type: application/json
 <br/>
 
 <div align="center">
-  <code>/* return process.exit(0); -- IT Programmer // Pink Life pink person 🌸⚡ */</code>
+  <code>/* return process.exit(0); -- Programmer IT // IT Coding // Pink Life pink person 🌸⚡ */</code>
   <br/><br/>
-  <!-- IT Programmer Footer Banner: Gradient #eb34c3 -> #0d020d -> #eb34c3 -->
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:eb34c3,50:0d020d,100:eb34c3&height=80&section=footer&text=console.log(%22IT%20Programmer%20%2F%2F%20Pink%20Life%20pink%20person%20%F0%9F%8C%B8%E2%9A%A1%22)%3B&fontSize=22&fontAlignY=55&fontColor=ffffff" width="100%" alt="Footer Banner" />
+  <!-- IT Programmer & Coding Footer Banner: Gradient #eb34c3 -> #0d020d -> #eb34c3 -->
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:eb34c3,50:0d020d,100:eb34c3&height=80&section=footer&text=console.log(%22Programmer%20IT%20%7C%20Coding%20%7C%20Pink%20Life%20pink%20person%20%F0%9F%8C%B8%E2%9A%A1%22)%3B&fontSize=20&fontAlignY=55&fontColor=ffffff" width="100%" alt="Footer Banner" />
 </div>
