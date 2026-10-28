@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyZone — Platform Belajar Digital Interaktif</title>
+  <meta name="description" content="StudyZone adalah platform belajar digital interaktif untuk pelajar dengan ringkasan materi, kuis seru, jadwal & pengingat tugas, serta teman belajar berkarakter unik.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Canvas Confetti for celebrations -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body class="theme-dark">
+  <!-- Audio Toggle & Audio Context Container -->
+  <div class="audio-toast" id="audioToast" aria-live="polite"></div>
+
+  <!-- Top Navigation Bar -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-logo" id="brandLogo">
+        <div class="logo-icon">
+          <svg viewBox="0 0 40 40" width="36" height="36" fill="none">
+            <rect width="40" height="40" rx="12" fill="url(#logo-grad)"/>
+            <path d="M12 28V15C12 13.8954 12.8954 13 14 13H26C27.1046 13 28 13.8954 28 15V28L20 23.5L12 28Z" fill="#ffffff" fill-opacity="0.95"/>
+            <circle cx="20" cy="18" r="2.5" fill="#6366F1"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6366F1"/>
+                <stop offset="1" stop-color="#A855F7"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Study<span class="highlight">Zone</span></span>
+          <span class="brand-tag">Belajar Cerdas & Seru</span>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" id="mainNav">
+        <button class="nav-btn active" data-tab="dashboard" id="tabBtnDashboard">
+          <span class="icon">🏠</span>
+          <span class="label">Beranda</span>
+        </button>
+        <button class="nav-btn" data-tab="materi" id="tabBtnMateri">
+          <span class="icon">📚</span>
+          <span class="label">Materi & Soal</span>
+        </button>
+        <button class="nav-btn" data-tab="kuis" id="tabBtnKuis">
+          <span class="icon">⚡</span>
+          <span class="label">Kuis Tantangan</span>
+          <span class="nav-badge">XP+</span>
+        </button>
+        <button class="nav-btn" data-tab="jadwal" id="tabBtnJadwal">
+          <span class="icon">📅</span>
+          <span class="label">Jadwal & Tugas</span>
+          <span class="badge-count" id="taskPendingBadge">0</span>
+        </button>
+        <button class="nav-btn" data-tab="ruang-fokus" id="tabBtnFokus">
+          <span class="icon">⏱️</span>
+          <span class="label">Ruang Fokus</span>
+        </button>
+        <button class="nav-btn" data-tab="teman" id="tabBtnTeman">
+          <span class="icon">👥</span>
+          <span class="label">Teman Belajar</span>
+          <span class="live-dot-pulse"></span>
+        </button>
+      </nav>
+
+      <!-- User & Companion Status Bar -->
+      <div class="header-actions">
+        <!-- Daily Streak -->
+        <div class="streak-pill" title="Streak Belajar Beruntun">
+          <span class="streak-flame">🔥</span>
+          <span class="streak-number" id="streakCounter">5</span>
+          <span class="streak-text">Hari</span>
+        </div>
+
+        <!-- XP & Level Badge -->
+        <div class="xp-pill" id="xpPill" title="XP Anda">
+          <span class="xp-star">⭐</span>
+          <span class="xp-val" id="userXpDisplay">1,240 XP</span>
+          <span class="level-tag" id="userLevelTag">Lv. 3</span>
+        </div>
+
+        <!-- Audio FX Toggle -->
+        <button class="icon-toggle-btn" id="soundToggleBtn" title="Suara Efek (Aktif/Nonaktif)">
+          <span id="soundIcon">🔊</span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="icon-toggle-btn" id="themeToggleBtn" title="Ganti Tema">
+          <span id="themeIcon">🌙</span>
+        </button>
+
+        <!-- Active Mascot Mini Avatar -->
+        <button class="mascot-avatar-trigger" id="openMascotModalBtn" title="Ganti Karakter Sahabat Belajar">
+          <div class="mascot-mini-circle" id="mascotMiniHead">
+            <!-- Dynamically populated -->
+          </div>
+          <span class="mascot-change-hint">Sahabat</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+
+    <!-- TAB 1: DASHBOARD (BERANDA) -->
+    <section class="tab-pane active" id="pane-dashboard">
+      <!-- Welcome Banner with Interactive Mascot -->
+      <div class="hero-card">
+        <div class="hero-left">
+          <div class="greeting-badge">
+            <span class="pulse-indicator"></span> Semangat Pagi, Pejuang Ilmu!
+          </div>
+          <h1 class="hero-title">Siap Taklukkan Materi Hari Ini?</h1>
+          <p class="hero-desc">
+            Belajar jadi petualangan seru bersama sahabat unikmu. Selesaikan ringkasan, uji pemahaman di kuis kilat, dan selesaikan tugas tepat waktu.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" id="heroStartStudyBtn">
+              <span>🚀 Mulai Sesi Belajar</span>
+            </button>
+            <button class="btn btn-secondary" id="heroQuickQuizBtn">
+              <span>⚡ Kuis Kilat 5 Soal</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- Mascot Interactive Display -->
+          <div class="mascot-hero-card" id="mascotHeroCard">
+            <div class="mascot-speech-bubble" id="mascotDialogue">
+              "Halo! Aku Koko 🦉. Yuk selesaikan 1 target belajar kita hari ini! Kamu pasti bisa!"
+            </div>
+            <div class="mascot-interactive-figure" id="mascotFigureContainer">
+              <!-- SVG character injected here -->
+            </div>
+            <div class="mascot-meta">
+              <span class="mascot-name-badge" id="mascotNameBadge">Koko Si Burung Hantu</span>
+              <span class="mascot-perk-badge" id="mascotPerkBadge">Buff: +20% Fokus</span>
+            </div>
+            <button class="btn-text-sm" id="mascotSwitchQuickBtn">Ganti Karakter ✨</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Stats & Overview Grid -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-icon-wrapper math-grad">
+            <span>📖</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-num" id="statMateriRead">8</div>
+            <div class="stat-label">Ringkasan Dibaca</div>
+          </div>
+          <div class="stat-trend positive">+3 minggu ini</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrapper quiz-grad">
+            <span>🏆</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-num" id="statQuizFinished">14</div>
+            <div class="stat-label">Kuis Dimenangkan</div>
+          </div>
+          <div class="stat-trend positive">Akurasi 88%</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrapper task-grad">
+            <span>✅</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-num" id="statTasksCompleted">19</div>
+            <div class="stat-label">Tugas Tuntas</div>
+          </div>
+          <div class="stat-trend positive">Tepat waktu</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-wrapper focus-grad">
+            <span>⏳</span>
+          </div>
+          <div class="stat-info">
+            <div class="stat-num" id="statFocusMinutes">185</div>
+            <div class="stat-label">Menit Fokus Pomodoro</div>
+          </div>
+          <div class="stat-trend positive">Level Up segera!</div>
+        </div>
+      </div>
+
+      <!-- Dashboard 2-Column Section -->
+      <div class="dash-columns">
+        <!-- Left: Urgent Tasks & Next Up -->
+        <div class="dash-box">
+          <div class="dash-box-header">
+            <h3><span class="icon">📌</span> Tugas & Target Terdekat</h3>
+            <button class="btn-link" id="dashViewAllTasks">Lihat Semua ➔</button>
+          </div>
+          <div class="quick-tasks-list" id="dashQuickTasks">
+            <!-- Populated via JS -->
+          </div>
+          <div class="quick-add-task-bar">
+            <input type="text" id="quickTaskInput" placeholder="Tambah pengingat cepat (e.g. PR Matematika hal 42)..." />
+            <button class="btn btn-sm btn-primary" id="quickTaskBtn">+</button>
+          </div>
+        </div>
+
+        <!-- Right: Recent Quiz & Recommended Material -->
+        <div class="dash-box">
+          <div class="dash-box-header">
+            <h3><span class="icon">💡</span> Rekomendasi Hari Ini</h3>
+            <span class="badge-subtle">Dipilih Sahabatmu</span>
+          </div>
+          <div class="recommend-cards">
+            <div class="recommend-card" id="recCard1">
+              <div class="rec-badge math">Matematika</div>
+              <h4 class="rec-title">Trigonometri & Sudut Istimewa</h4>
+              <p class="rec-desc">Ringkasan rumus cepat sin, cos, tan dan trik jari tangan.</p>
+              <div class="rec-footer">
+                <span>⏱️ 5 mnt baca</span>
+                <button class="btn-sm btn-outline" onclick="StudyApp.openMaterial('mat-1')">Pelajari</button>
+              </div>
+            </div>
+
+            <div class="recommend-card" id="recCard2">
+              <div class="rec-badge science">Fisika</div>
+              <h4 class="rec-title">Hukum Newton I, II, & III</h4>
+              <p class="rec-desc">Konsep aksi-reaksi dan contoh soal gerak sehari-hari.</p>
+              <div class="rec-footer">
+                <span>⚡ Kuis 5 Soal</span>
+                <button class="btn-sm btn-accent" onclick="StudyApp.startQuizSubject('fisika')">Coba Kuis</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: MATERI & LATIHAN SOAL -->
+    <section class="tab-pane" id="pane-materi">
+      <div class="section-hero">
+        <div>
+          <span class="hero-badge">Pustaka Ilmu Digital</span>
+          <h2 class="section-title">Ringkasan Materi & Latihan Soal</h2>
+          <p class="section-desc">Pahami konsep penting dalam hitungan menit lewat ringkasan poin inti, kartu formula, dan latihan interaktif.</p>
+        </div>
+        <div class="materi-search-box">
+          <input type="text" id="searchMateriInput" placeholder="Cari rumus, topik, atau kata kunci...">
+          <span class="search-icon">🔍</span>
+        </div>
+      </div>
+
+      <!-- Subject Filter Pills -->
+      <div class="filter-pills" id="materiFilterPills">
+        <button class="pill-btn active" data-subject="all">Semua Mata Pelajaran</button>
+        <button class="pill-btn" data-subject="matematika">📐 Matematika</button>
+        <button class="pill-btn" data-subject="fisika">⚡ Fisika</button>
+        <button class="pill-btn" data-subject="biologi">🧬 Biologi</button>
+        <button class="pill-btn" data-subject="inggris">🌍 Bahasa Inggris</button>
+        <button class="pill-btn" data-subject="coding">💻 Coding & AI</button>
+      </div>
+
+      <!-- Mode View Toggle: Ringkasan vs Flashcards vs Latihan -->
+      <div class="materi-mode-bar">
+        <div class="view-switch-group">
+          <button class="switch-btn active" id="modeCardView">📋 Mode Ringkasan</button>
+          <button class="switch-btn" id="modeFlashcardView">🎴 Mode Flashcard (Balik Kartu)</button>
+        </div>
+        <div class="materi-count-info" id="materiCountInfo">Menampilkan 6 materi pilihan</div>
+      </div>
+
+      <!-- Materi Grid Cards (Standard View) -->
+      <div class="materi-grid" id="materiGrid">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Flashcards Carousel / Interactive View (Hidden by default) -->
+      <div class="flashcards-wrapper" id="flashcardsView" style="display: none;">
+        <div class="flashcard-deck-header">
+          <div>
+            <h3 id="flashcardDeckTitle">Flashcards: Matematika & Sains</h3>
+            <p>Klik kartu untuk membalik dan melihat jawaban/rumus kunci!</p>
+          </div>
+          <div class="flashcard-nav-controls">
+            <button class="btn btn-sm btn-secondary" id="fcPrevBtn">◀ Sebelumnya</button>
+            <span class="fc-counter" id="fcCounter">1 / 6</span>
+            <button class="btn btn-sm btn-primary" id="fcNextBtn">Berikutnya ▶</button>
+          </div>
+        </div>
+
+        <div class="flashcard-stage">
+          <div class="flashcard-3d" id="activeFlashcard">
+            <div class="card-face card-front">
+              <span class="fc-subject-tag" id="fcSubject">Matematika</span>
+              <div class="fc-question" id="fcQuestion">Berapakah nilai dari sin 30° dan cos 60°?</div>
+              <div class="fc-hint">💡 Klik untuk balik kartu</div>
+            </div>
+            <div class="card-face card-back">
+              <span class="fc-subject-tag answer-tag">Jawaban & Penjelasan</span>
+              <div class="fc-answer" id="fcAnswer">Nilainya sama-sama 1/2 (0.5). Ingat segitiga istimewa 30°-60°-90°!</div>
+              <div class="fc-action-row">
+                <button class="btn-chip easy" id="fcMarkEasy">😄 Sudah Paham (+5 XP)</button>
+                <button class="btn-chip hard" id="fcMarkHard">🤔 Perlu Diulang</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: KUIS INTERAKTIF DENGAN SKOR -->
+    <section class="tab-pane" id="pane-kuis">
+      <div class="quiz-container" id="quizContainer">
+        <!-- Quiz Selection Screen -->
+        <div class="quiz-lobby" id="quizLobby">
+          <div class="lobby-header">
+            <span class="hero-badge">Arena Pengetahuan</span>
+            <h2 class="section-title">Kuis Interaktif Berwaktu ⚡</h2>
+            <p class="section-desc">Uji ketangkasan berpikirmu! Dapatkan skor tinggi, pertahankan combo streak, dan raih badge belajar baru.</p>
+          </div>
+
+          <div class="quiz-categories-grid">
+            <div class="quiz-cat-card" onclick="StudyApp.startQuizSubject('matematika')">
+              <div class="quiz-cat-badge math-grad">📐</div>
+              <h3>Matematika Kilat</h3>
+              <p>Trigonometri, aljabar, dan trik hitung cepat.</p>
+              <div class="quiz-cat-footer">
+                <span>5 Pertanyaan • 15 dtk/soal</span>
+                <span class="xp-gain">+100 XP</span>
+              </div>
+              <button class="btn btn-primary btn-block">Mulai Kuis</button>
+            </div>
+
+            <div class="quiz-cat-card" onclick="StudyApp.startQuizSubject('fisika')">
+              <div class="quiz-cat-badge quiz-grad">⚡</div>
+              <h3>Tantangan Fisika</h3>
+              <p>Hukum gerak, energi, gaya, dan fenomena alam.</p>
+              <div class="quiz-cat-footer">
+                <span>5 Pertanyaan • 15 dtk/soal</span>
+                <span class="xp-gain">+100 XP</span>
+              </div>
+              <button class="btn btn-primary btn-block">Mulai Kuis</button>
+            </div>
+
+            <div class="quiz-cat-card" onclick="StudyApp.startQuizSubject('inggris')">
+              <div class="quiz-cat-badge task-grad">🌍</div>
+              <h3>English Master</h3>
+              <p>Tenses, vocabularies penting, dan idioms.</p>
+              <div class="quiz-cat-footer">
+                <span>5 Pertanyaan • 15 dtk/soal</span>
+                <span class="xp-gain">+100 XP</span>
+              </div>
+              <button class="btn btn-primary btn-block">Mulai Kuis</button>
+            </div>
+
+            <div class="quiz-cat-card" onclick="StudyApp.startQuizSubject('coding')">
+              <div class="quiz-cat-badge focus-grad">💻</div>
+              <h3>Coding & Logika</h3>
+              <p>Logika pemrograman dasar, algoritma & AI.</p>
+              <div class="quiz-cat-footer">
+                <span>5 Pertanyaan • 15 dtk/soal</span>
+                <span class="xp-gain">+100 XP</span>
+              </div>
+              <button class="btn btn-primary btn-block">Mulai Kuis</button>
+            </div>
+          </div>
+
+          <!-- Leaderboard / Highscore Teaser -->
+          <div class="quiz-hall-of-fame">
+            <div class="hof-header">
+              <h3>👑 Papan Skor Minggu Ini</h3>
+              <span>Bersaing dengan teman StudyZone</span>
+            </div>
+            <div class="hof-list">
+              <div class="hof-item rank-1">
+                <span class="rank-num">🥇 1</span>
+                <div class="hof-user">
+                  <span class="hof-avatar">🦊</span>
+                  <div>
+                    <div class="hof-name">Rian Pratama</div>
+                    <div class="hof-sub">Sahabat: Foxy • 18 Kuis Sempurna</div>
+                  </div>
+                </div>
+                <div class="hof-score">2,850 XP</div>
+              </div>
+
+              <div class="hof-item rank-2">
+                <span class="rank-num">🥈 2</span>
+                <div class="hof-user">
+                  <span class="hof-avatar">🦉</span>
+                  <div>
+                    <div class="hof-name">Aisyah Putri</div>
+                    <div class="hof-sub">Sahabat: Koko • 15 Kuis Sempurna</div>
+                  </div>
+                </div>
+                <div class="hof-score">2,410 XP</div>
+              </div>
+
+              <div class="hof-item rank-3">
+                <span class="rank-num">🥉 3</span>
+                <div class="hof-user">
+                  <span class="hof-avatar">🤖</span>
+                  <div>
+                    <div class="hof-name">Kamu (Pelajar Hebat)</div>
+                    <div class="hof-sub" id="hofUserSub">Sahabat: Koko • Peringkat 3</div>
+                  </div>
+                </div>
+                <div class="hof-score" id="hofUserScore">1,240 XP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Gameplay Screen (Initially Hidden) -->
+        <div class="quiz-gameplay" id="quizGameplay" style="display: none;">
+          <!-- Top Bar: Progress, Timer, Streak -->
+          <div class="quiz-hud">
+            <div class="quiz-progress-section">
+              <div class="quiz-q-indicator">
+                Soal <span id="quizCurrentQ">1</span> dari <span id="quizTotalQ">5</span>
+              </div>
+              <div class="quiz-progress-track">
+                <div class="quiz-progress-fill" id="quizProgressBar" style="width: 20%;"></div>
+              </div>
+            </div>
+
+            <div class="quiz-timer-pill" id="quizTimerPill">
+              <span class="timer-icon">⏳</span>
+              <span class="timer-seconds" id="quizTimerText">15</span>s
+            </div>
+
+            <div class="quiz-score-pill">
+              <span class="combo-tag" id="quizComboBadge">Streak x1</span>
+              <span class="current-score" id="quizCurrentScore">0</span> Poin
+            </div>
+          </div>
+
+          <!-- Question Box -->
+          <div class="quiz-question-card">
+            <div class="quiz-subject-chip" id="quizSubjectChip">Matematika</div>
+            <h3 class="quiz-question-text" id="quizQuestionText">
+              Pertanyaan kuis akan muncul di sini...
+            </h3>
+          </div>
+
+          <!-- Answer Options Grid -->
+          <div class="quiz-options-grid" id="quizOptionsGrid">
+            <!-- Rendered by JS -->
+          </div>
+
+          <!-- Live Mascot Reaction In Quiz -->
+          <div class="quiz-mascot-reaction" id="quizMascotFeedback">
+            <div class="q-mascot-avatar" id="quizMascotMini">🦉</div>
+            <div class="q-mascot-comment" id="quizMascotComment">"Pikirkan baik-baik! Kamu punya waktu 15 detik."</div>
+          </div>
+
+          <!-- Explanation Box (Appears after answer) -->
+          <div class="quiz-explanation-box" id="quizExplanationBox" style="display: none;">
+            <div class="exp-title" id="quizExpTitle">Penjelasan Jawaban:</div>
+            <div class="exp-body" id="quizExpBody">...</div>
+            <button class="btn btn-primary" id="quizNextBtn">Lanjut ke Soal Berikutnya ➔</button>
+          </div>
+        </div>
+
+        <!-- Quiz Results Screen (Initially Hidden) -->
+        <div class="quiz-result-view" id="quizResultView" style="display: none;">
+          <div class="result-card">
+            <div class="result-badge-star" id="resultTrophy">🏆</div>
+            <h2 class="result-title" id="resultHeadline">Luar Biasa! Kuis Selesai!</h2>
+            <p class="result-subtitle" id="resultSub">Kamu membuktikan kemampuan belajarmu hari ini.</p>
+
+            <div class="result-stats-row">
+              <div class="r-stat">
+                <span class="r-label">Skor Akhir</span>
+                <span class="r-val highlight" id="resultFinalScore">450</span>
+              </div>
+              <div class="r-stat">
+                <span class="r-label">Jawaban Benar</span>
+                <span class="r-val" id="resultCorrectCount">4 / 5</span>
+              </div>
+              <div class="r-stat">
+                <span class="r-label">XP Diperoleh</span>
+                <span class="r-val success" id="resultXpEarned">+120 XP</span>
+              </div>
+              <div class="r-stat">
+                <span class="r-label">Akurasi</span>
+                <span class="r-val" id="resultAccuracy">80%</span>
+              </div>
+            </div>
+
+            <!-- Companion review comment -->
+            <div class="result-companion-speech" id="resultCompanionSpeech">
+              <span class="comp-avatar" id="resultCompAvatar">🦉</span>
+              <div class="comp-bubble" id="resultCompText">"Analisis bagus! Ketenanganmu saat menjawab soal membuat pemahamanmu semakin tajam!"</div>
+            </div>
+
+            <div class="result-actions">
+              <button class="btn btn-primary" id="btnRestartQuiz">⚡ Main Kuis Lain</button>
+              <button class="btn btn-secondary" id="btnBackToLobby">🏠 Kembali ke Menu Kuis</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 4: JADWAL BELAJAR & PENGINGAT TUGAS -->
+    <section class="tab-pane" id="pane-jadwal">
+      <div class="section-hero">
+        <div>
+          <span class="hero-badge">Manajemen Waktu Pelajar</span>
+          <h2 class="section-title">Jadwal Belajar & Pengingat Tugas 📅</h2>
+          <p class="section-desc">Atur PR, ujian, dan target belajarmu. Dapatkan pengingat visual sebelum deadline tiba!</p>
+        </div>
+        <button class="btn btn-primary" id="openNewTaskModalBtn">
+          <span>+ Tambah Tugas / Jadwal Baru</span>
+        </button>
+      </div>
+
+      <!-- Planner Grid: Weekly / Daily Calendar + Task Manager -->
+      <div class="planner-layout">
+        <!-- Left: Task Filter & Task List -->
+        <div class="tasks-column">
+          <div class="tasks-filter-bar">
+            <div class="filter-tabs">
+              <button class="task-tab-btn active" data-filter="all">Semua (<span id="countAllTasks">0</span>)</button>
+              <button class="task-tab-btn" data-filter="pending">Belum Selesai (<span id="countPendingTasks">0</span>)</button>
+              <button class="task-tab-btn" data-filter="completed">Selesai (<span id="countDoneTasks">0</span>)</button>
+            </div>
+            <div class="priority-sort">
+              <select id="taskPrioritySort" class="custom-select">
+                <option value="deadline">Urutkan: Deadline Terdekat</option>
+                <option value="priority">Urutkan: Prioritas Tertinggi</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="tasks-container" id="taskListContainer">
+            <!-- Dynamically populated tasks -->
+          </div>
+        </div>
+
+        <!-- Right: Weekly Schedule Matrix & Procrastination Buster -->
+        <div class="schedule-column">
+          <!-- Timetable Card -->
+          <div class="timetable-card">
+            <div class="timetable-header">
+              <h3>🗓️ Jadwal Rutin Belajar Mingguan</h3>
+              <span class="badge-subtle">Senin - Minggu</span>
+            </div>
+            <div class="weekly-matrix">
+              <div class="matrix-day">
+                <div class="day-name">Senin</div>
+                <div class="day-slot math">15:00 - Mat: Aljabar</div>
+                <div class="day-slot physics">19:30 - Fisika Dasar</div>
+              </div>
+              <div class="matrix-day">
+                <div class="day-name">Selasa</div>
+                <div class="day-slot english">16:00 - English Vocab</div>
+                <div class="day-slot coding">20:00 - Coding Web</div>
+              </div>
+              <div class="matrix-day today">
+                <div class="day-name">Rabu (Hari Ini)</div>
+                <div class="day-slot biology">15:30 - Biologi Sel</div>
+                <div class="day-slot math highlight">19:00 - Latihan Soal Kuis</div>
+              </div>
+              <div class="matrix-day">
+                <div class="day-name">Kamis</div>
+                <div class="day-slot physics">16:00 - Gerak Lurus</div>
+                <div class="day-slot free">Istirahat Santai ☕</div>
+              </div>
+              <div class="matrix-day">
+                <div class="day-name">Jumat</div>
+                <div class="day-slot coding">15:00 - Proyek Coding</div>
+                <div class="day-slot english">19:30 - Reading & Story</div>
+              </div>
+              <div class="matrix-day weekend">
+                <div class="day-name">Sabtu & Minggu</div>
+                <div class="day-slot review">Review Mingguan & Tryout Kuis</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Study Habit & Reminder Tip Card -->
+          <div class="habit-tip-card">
+            <div class="habit-avatar" id="habitMascotAvatar">🦊</div>
+            <div class="habit-content">
+              <h4>Tips dari Foxy Si Rubah</h4>
+              <p>"Bagi tugas besar jadi potongan 25 menit. Saat selesai 1 bab, beri dirimu reward kecil!"</p>
+              <button class="btn-sm btn-outline" id="btnJumpToPomodoro">Buka Ruang Fokus Sekarang ➔</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 5: RUANG FOKUS & POMODORO (TIMER & AMBIENT LO-FI) -->
+    <section class="tab-pane" id="pane-ruang-fokus">
+      <div class="focus-room-wrapper">
+        <div class="focus-left">
+          <div class="focus-timer-card">
+            <!-- Mode Selector -->
+            <div class="pomodoro-modes">
+              <button class="pomo-mode-btn active" data-time="1500" data-label="Fokus Belajar">🎯 Fokus (25m)</button>
+              <button class="pomo-mode-btn" data-time="300" data-label="Istirahat Singkat">☕ Istirahat (5m)</button>
+              <button class="pomo-mode-btn" data-time="900" data-label="Istirahat Panjang">🌴 Santai (15m)</button>
+            </div>
+
+            <!-- Big Circular Timer Display -->
+            <div class="timer-dial-wrapper">
+              <svg class="progress-ring" width="280" height="280">
+                <circle class="progress-ring-bg" stroke="rgba(255,255,255,0.08)" stroke-width="12" fill="transparent" r="120" cx="140" cy="140"/>
+                <circle class="progress-ring-circle" id="pomoCircle" stroke="url(#pomo-grad)" stroke-width="12" stroke-linecap="round" fill="transparent" r="120" cx="140" cy="140"/>
+                <defs>
+                  <linearGradient id="pomo-grad" x1="0" y1="0" x2="1" y2="1">
+                    <stop stop-color="#6366F1"/>
+                    <stop offset="1" stop-color="#06B6D4"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+              <div class="timer-content">
+                <span class="pomo-state-label" id="pomoStateLabel">Fokus Belajar</span>
+                <span class="pomo-countdown" id="pomoCountdown">25:00</span>
+                <span class="pomo-round" id="pomoRoundLabel">Sesi #1 / 4</span>
+              </div>
+            </div>
+
+            <!-- Timer Action Controls -->
+            <div class="timer-controls">
+              <button class="btn btn-lg btn-primary btn-pomo" id="pomoStartBtn">
+                <span id="pomoStartIcon">▶ Mulai Fokus</span>
+              </button>
+              <button class="btn btn-lg btn-secondary" id="pomoResetBtn" title="Reset Timer">
+                🔄
+              </button>
+            </div>
+
+            <!-- Active Target Indicator -->
+            <div class="focus-active-target">
+              <span class="target-label">Target Sesi Ini:</span>
+              <span class="target-value" id="pomoCurrentTarget">Membaca Rangkuman & Latihan Kuis</span>
+              <button class="btn-text-sm" id="pomoChangeTargetBtn">Ganti</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="focus-right">
+          <!-- Ambient Sound Generator Card (Web Audio API) -->
+          <div class="ambient-sound-card">
+            <div class="ambient-header">
+              <h3>🎵 Generator Suara Penenang Fokus</h3>
+              <span class="badge-subtle">Tanpa Buffering</span>
+            </div>
+            <p class="ambient-desc">Suara latar frekuensi binaural untuk membantu otak rileks dan berkonsentrasi penuh.</p>
+
+            <div class="ambient-grid">
+              <button class="ambient-btn" data-sound="rain" id="ambBtnRain">
+                <span class="amb-icon">🌧️</span>
+                <span class="amb-name">Hujan Santai</span>
+                <span class="amb-status">Mati</span>
+              </button>
+
+              <button class="ambient-btn" data-sound="waves" id="ambBtnWaves">
+                <span class="amb-icon">🌊</span>
+                <span class="amb-name">Ombak Pantai</span>
+                <span class="amb-status">Mati</span>
+              </button>
+
+              <button class="ambient-btn" data-sound="whitenoise" id="ambBtnWhite">
+                <span class="amb-icon">📻</span>
+                <span class="amb-name">White Noise</span>
+                <span class="amb-status">Mati</span>
+              </button>
+
+              <button class="ambient-btn" data-sound="binaural" id="ambBtnBinaural">
+                <span class="amb-icon">🧠</span>
+                <span class="amb-name">Gelombang Alpha</span>
+                <span class="amb-status">Mati</span>
+              </button>
+            </div>
+
+            <div class="volume-slider-group">
+              <span class="vol-icon">🔉</span>
+              <input type="range" id="ambientVolSlider" min="0" max="100" value="40" class="custom-range" title="Volume Suara Latar">
+              <span class="vol-icon">🔊</span>
+            </div>
+          </div>
+
+          <!-- Companion Focus Animation Box -->
+          <div class="companion-focus-status-card">
+            <div class="comp-status-figure" id="focusCompanionFigure">
+              <!-- Dynamically populated mascot studying -->
+            </div>
+            <div class="comp-status-text">
+              <h4 id="focusCompTitle">Sahabatmu Sedang Menemanimu</h4>
+              <p id="focusCompQuote">"Diam dan fokus. Saat timer berbunyi, kita rayakan bersama!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 6: BELAJAR BERSAMA TEMAN & KARAKTER UNIK -->
+    <section class="tab-pane" id="pane-teman">
+      <div class="section-hero">
+        <div>
+          <span class="hero-badge">Ruang Virtual Komunitas</span>
+          <h2 class="section-title">Belajar Bersama Teman & Karakter Unik 👥</h2>
+          <p class="section-desc">Belajar tidak lagi membosankan! Masuk ke lounge belajar bersama teman-teman nyata dan koleksi sahabat berkarakter unik.</p>
+        </div>
+        <div class="lounge-header-stats">
+          <span class="online-pill"><span class="live-dot-pulse"></span> 4 Teman Sedang Online</span>
+          <button class="btn btn-secondary btn-sm" id="btnOpenCharacterRoster">🎨 Pilih Sahabat Maskot</button>
+        </div>
+      </div>
+
+      <!-- Virtual Study Lounge Layout -->
+      <div class="lounge-grid">
+        <!-- Friends Desks in Room -->
+        <div class="lounge-desks-column">
+          <div class="room-banner">
+            <div class="room-title">
+              <h3>🛋️ Ruang Belajar: #Ambisius-Santai-01</h3>
+              <p>Ruang sunyi untuk saling memotivasi tanpa gangguan.</p>
+            </div>
+            <button class="btn btn-sm btn-primary" id="btnSendGroupCheer">🎉 Kirim Reaksi Semangat</button>
+          </div>
+
+          <div class="friends-desk-grid" id="friendsDeskGrid">
+            <!-- Friend 1: Rian -->
+            <div class="friend-desk-card">
+              <div class="friend-card-header">
+                <div class="friend-user-info">
+                  <div class="avatar-box">
+                    <span class="user-badge">Rian P.</span>
+                    <span class="mascot-badge-tag" title="Sahabat: Foxy">🦊 Foxy</span>
+                  </div>
+                  <div class="friend-status-text">
+                    <span class="status-activity">📐 Mengerjakan 5 Soal Matematika</span>
+                    <span class="status-time">⏱️ Fokus 22 mnt</span>
+                  </div>
+                </div>
+                <div class="friend-presence online"></div>
+              </div>
+              <div class="friend-quote">"Target hari ini: Paham materi trigonometri sebelum ashar!"</div>
+              <div class="friend-cheer-action">
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Rian', '👏')">👏 Tepuk Tangan</button>
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Rian', '🔥')">🔥 Semangat</button>
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Rian', '☕')">☕ Traktir Kopi</button>
+              </div>
+            </div>
+
+            <!-- Friend 2: Aisyah -->
+            <div class="friend-desk-card">
+              <div class="friend-card-header">
+                <div class="friend-user-info">
+                  <div class="avatar-box">
+                    <span class="user-badge">Aisyah</span>
+                    <span class="mascot-badge-tag" title="Sahabat: Koko">🦉 Koko</span>
+                  </div>
+                  <div class="friend-status-text">
+                    <span class="status-activity">⚡ Review Bab Gerak Parabola</span>
+                    <span class="status-time">⏱️ Selesai Pomodoro 2x</span>
+                  </div>
+                </div>
+                <div class="friend-presence online"></div>
+              </div>
+              <div class="friend-quote">"Jangan lupa buat catatan poin penting ya teman-teman."</div>
+              <div class="friend-cheer-action">
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Aisyah', '⭐')">⭐ Bintang</button>
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Aisyah', '🚀')">🚀 Ambis</button>
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Aisyah', '❤️')">❤️ Mantap</button>
+              </div>
+            </div>
+
+            <!-- Friend 3: Bima -->
+            <div class="friend-desk-card">
+              <div class="friend-card-header">
+                <div class="friend-user-info">
+                  <div class="avatar-box">
+                    <span class="user-badge">Bima S.</span>
+                    <span class="mascot-badge-tag" title="Sahabat: Mimi">🐱 Mimi</span>
+                  </div>
+                  <div class="friend-status-text">
+                    <span class="status-activity">💻 Bikin Algoritma Sorting Python</span>
+                    <span class="status-time">⏱️ Fokus 15 mnt</span>
+                  </div>
+                </div>
+                <div class="friend-presence online"></div>
+              </div>
+              <div class="friend-quote">"Debugging itu seru kalau ditemani lagu lo-fi."</div>
+              <div class="friend-cheer-action">
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Bima', '💻')">💻 GG</button>
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Bima', '🔥')">🔥 Semangat</button>
+                <button class="btn-cheer" onclick="StudyApp.cheerFriend('Bima', '🎉')">🎉 Keren</button>
+              </div>
+            </div>
+
+            <!-- User Desk (Self) -->
+            <div class="friend-desk-card self-desk">
+              <div class="friend-card-header">
+                <div class="friend-user-info">
+                  <div class="avatar-box">
+                    <span class="user-badge highlight">Kamu (Saya)</span>
+                    <span class="mascot-badge-tag" id="selfDeskMascotTag">🦉 Koko</span>
+                  </div>
+                  <div class="friend-status-text">
+                    <span class="status-activity" id="selfDeskStatus">Sedang aktif belajar di StudyZone</span>
+                    <span class="status-time">Online Sekarang</span>
+                  </div>
+                </div>
+                <div class="friend-presence online"></div>
+              </div>
+              <div class="friend-quote" id="selfDeskQuote">"Siap menaklukkan semua tugas hari ini!"</div>
+              <div class="friend-cheer-action">
+                <button class="btn-text-sm" id="btnEditStatusQuote">✏️ Ubah Status & Motivasi</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Lounge Live Feed & Companion Chat -->
+        <div class="lounge-chat-column">
+          <div class="chat-box-card">
+            <div class="chat-header">
+              <h3>💬 Obrolan & Motivasi Ruang</h3>
+              <span class="chat-members-count">4 anggota</span>
+            </div>
+
+            <div class="chat-messages-container" id="loungeChatMessages">
+              <div class="chat-msg system">
+                <span>🌟 Selamat datang di Lounge Belajar! Kirimkan pesan semangat untuk kawan-kawanmu.</span>
+              </div>
+              <div class="chat-msg">
+                <div class="msg-sender">Rian P. <span class="sender-mascot">🦊</span></div>
+                <div class="msg-bubble">Halo semuanya! Kuis fisika hari ini lumayan menantang ya, tapi seru!</div>
+                <div class="msg-time">14:10</div>
+              </div>
+              <div class="chat-msg">
+                <div class="msg-sender">Aisyah <span class="sender-mascot">🦉</span></div>
+                <div class="msg-bubble">Iya Rian, rumusnya bisa diringkas pakai flashcard di tab Materi. Coba cek deh!</div>
+                <div class="msg-time">14:12</div>
+              </div>
+              <div class="chat-msg mascot-bot">
+                <div class="msg-sender">Koko Si Burung Hantu 🦉 <span class="bot-badge">Maskot</span></div>
+                <div class="msg-bubble">"Ingat, konsistensi 20 menit setiap hari lebih kuat daripada belajar semalam suntuk!"</div>
+                <div class="msg-time">14:15</div>
+              </div>
+            </div>
+
+            <!-- Chat Input -->
+            <form class="chat-input-form" id="loungeChatForm">
+              <input type="text" id="loungeChatInput" placeholder="Tulis pesan motivasi atau tanya materi..." autocomplete="off">
+              <button type="submit" class="btn btn-primary btn-send">Kirim</button>
+            </form>
+          </div>
+
+          <!-- Mascot Collection Showcase -->
+          <div class="mascot-showcase-box">
+            <h4>4 Karakter Sahabat Unik StudyZone</h4>
+            <div class="mini-mascot-row">
+              <div class="mini-m-card active" onclick="StudyApp.selectMascot('koko')">
+                <span class="m-emoji">🦉</span>
+                <span class="m-title">Koko</span>
+                <span class="m-trait">Bijak & Analitis</span>
+              </div>
+              <div class="mini-m-card" onclick="StudyApp.selectMascot('foxy')">
+                <span class="m-emoji">🦊</span>
+                <span class="m-title">Foxy</span>
+                <span class="m-trait">Ceria & Energetik</span>
+              </div>
+              <div class="mini-m-card" onclick="StudyApp.selectMascot('mimi')">
+                <span class="m-emoji">🐱</span>
+                <span class="m-title">Mimi</span>
+                <span class="m-trait">Santai & Estetik</span>
+              </div>
+              <div class="mini-m-card" onclick="StudyApp.selectMascot('byte')">
+                <span class="m-emoji">🤖</span>
+                <span class="m-title">Byte</span>
+                <span class="m-trait">Logis & Futuristik</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL 1: DETAIL MATERI & PEMBAHASAN LENGKAP -->
+  <div class="modal-backdrop" id="materialModal" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-badge" id="modalMatSubject">Matematika</span>
+          <h3 id="modalMatTitle">Judul Materi</h3>
+        </div>
+        <button class="modal-close-btn" onclick="StudyApp.closeModal('materialModal')">&times;</button>
+      </div>
+      <div class="modal-body" id="modalMatBody">
+        <!-- Injected via JS -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="StudyApp.closeModal('materialModal')">Tutup</button>
+        <button class="btn btn-primary" id="modalMatPracticeQuizBtn">Uji Materi Ini di Kuis ⚡</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: TAMBAH TUGAS / JADWAL BARU -->
+  <div class="modal-backdrop" id="taskModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>+ Tambah Pengingat Tugas & Jadwal</h3>
+        <button class="modal-close-btn" onclick="StudyApp.closeModal('taskModal')">&times;</button>
+      </div>
+      <form id="newTaskForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="taskTitleInput">Judul Tugas / Aktivitas *</label>
+            <input type="text" id="taskTitleInput" class="form-control" placeholder="Contoh: Latihan Soal Fisika Bab 4" required>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-half">
+              <label for="taskSubjectSelect">Mata Pelajaran</label>
+              <select id="taskSubjectSelect" class="form-control">
+                <option value="Matematika">Matematika</option>
+                <option value="Fisika">Fisika</option>
+                <option value="Biologi">Biologi</option>
+                <option value="B. Inggris">B. Inggris</option>
+                <option value="Coding">Coding</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+            <div class="form-group col-half">
+              <label for="taskPrioritySelect">Tingkat Prioritas</label>
+              <select id="taskPrioritySelect" class="form-control">
+                <option value="tinggi">🔴 Tinggi (Mendesak)</option>
+                <option value="sedang" selected>🟡 Sedang</option>
+                <option value="rendah">🟢 Rendah</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group col-half">
+              <label for="taskDueDate">Batas Waktu (Deadline)</label>
+              <input type="date" id="taskDueDate" class="form-control" required>
+            </div>
+            <div class="form-group col-half">
+              <label for="taskDueTime">Jam (Opsional)</label>
+              <input type="time" id="taskDueTime" class="form-control" value="20:00">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="taskNotesInput">Catatan Tambahan (Opsional)</label>
+            <textarea id="taskNotesInput" class="form-control" rows="2" placeholder="Contoh: Kerjakan nomor ganjil di buku tulis."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="StudyApp.closeModal('taskModal')">Batal</button>
+          <button type="submit" class="btn btn-primary">Simpan Pengingat</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL 3: PILIH & SESUAIKAN KARAKTER SAHABAT BELAJAR -->
+  <div class="modal-backdrop" id="mascotModal" style="display: none;">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <div>
+          <h3>🎭 Pilih Sahabat Belajar Unikmu</h3>
+          <p class="modal-subtitle">Setiap karakter memiliki keunikan gaya motivasi dan bonus fokus tersendiri!</p>
+        </div>
+        <button class="modal-close-btn" onclick="StudyApp.closeModal('mascotModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="mascots-selection-grid" id="mascotsSelectionGrid">
+          <!-- Populated via JS -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary btn-block" onclick="StudyApp.closeModal('mascotModal')">Simpan Pilihan Sahabat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: UBAH STATUS / MOTIVASI DIRI -->
+  <div class="modal-backdrop" id="userStatusModal" style="display: none;">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3>✏️ Ubah Status & Motto Belajar</h3>
+        <button class="modal-close-btn" onclick="StudyApp.closeModal('userStatusModal')">&times;</button>
+      </div>
+      <form id="userStatusForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="inputSelfActivity">Aktivitas Belajarmu Sekarang</label>
+            <input type="text" id="inputSelfActivity" class="form-control" placeholder="Contoh: Sedang latihan soal kuis Fisika...">
+          </div>
+          <div class="form-group">
+            <label for="inputSelfMotto">Motto / Kata Penyemangat</label>
+            <input type="text" id="inputSelfMotto" class="form-control" placeholder="Contoh: Sukses adalah akumulasi usaha kecil setiap hari!">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="StudyApp.closeModal('userStatusModal')">Batal</button>
+          <button type="submit" class="btn btn-primary">Perbarui Status</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Floating Study Buddy Widget (Sticks to corner, can be clicked anytime) -->
+  <div class="floating-companion" id="floatingCompanion" title="Klik sahabatmu untuk tips semangat!">
+    <div class="companion-bubble" id="floatingBubble">
+      "Semangat belajarnya ya! Aku selalu ada di sini menemanimu!"
+    </div>
+    <div class="companion-avatar-wrap" id="floatingMascotSvg">
+      <!-- Mascot SVG -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="footer-brand">StudyZone 🚀</span>
+        <span class="footer-copy">Platform Belajar Digital Interaktif © 2026. Belajar lebih mudah, seru, dan menyenangkan bersama teman.</span>
+      </div>
+      <div class="footer-links">
+        <span>✨ Dibuat untuk Pelajar Indonesia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
